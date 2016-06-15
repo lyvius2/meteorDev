@@ -1,0 +1,29 @@
+<template name="main">
+    <div class="container-fluid">
+        {{#if page}}
+            <h2>{{page}}'s Page</h2>
+            {{#if currentUser}}
+                {{#if isFollowing}}
+                    <button id="unfollow" class="btn btn-inverse">unfollow</button>
+                {{else}}
+                    <button id="follow" class="btn btn-primary">follow</button>
+                {{/if}}
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="post" placeholder="Tell me something...">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary">
+                                <i class="glyphicon glyphicon-pencil">
+                                    Post
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            {{/if}}
+            {{>posts pageId=page}}
+        {{else}}
+            {{>dashboard}}
+        {{/if}}
+    </div>
+</template>

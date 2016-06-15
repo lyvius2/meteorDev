@@ -1,0 +1,17 @@
+<template name="posts">
+    {{#each posts}}
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img src="{{author.profile_image}}" alt="nobody" class="media-object">
+            </a>
+        </div>
+        <div class="media-body">
+            <h5 class="media-heading">{{author.name}}
+                - <i>{{timeFrom createdAt}}</i>
+            </h5>
+            {{message}}
+        </div>
+    </div>
+    {{/each}}
+</template>
